@@ -15,16 +15,16 @@ public class Programa {
 	public static void main(String[] args) throws ParseException {
 		Scanner sc = new Scanner(System.in);
 		SimpleDateFormat sdf = new SimpleDateFormat("dd/MM/yyyy");
-		System.out.print("Entre om o nome do Departamento");
+		System.out.print("Entre om o nome do Departamento: ");
 
 		String nomeDoDepartamento = sc.nextLine();
 
-		System.out.print("Digite os dados do Funcionário ");
-		System.out.println("Nome: ");
+		System.out.println("Digite os dados do trabalhador ");
+		System.out.print("Nome: ");
 		String nomeDoFuncionario = sc.nextLine();
-		System.out.println("Nivel : ");
+		System.out.print("Nivel : ");
 		String nivelDoFuncionario = sc.nextLine();
-		System.out.println("Salário Base: ");
+		System.out.print("Salário Base: ");
 		double salarioBase = sc.nextDouble();
 
 		Trabalhador trabalhador = new Trabalhador(nomeDoFuncionario, NivelDoTrabalhador.valueOf(nivelDoFuncionario),
@@ -44,6 +44,16 @@ public class Programa {
 			trabalhador.adicionarContrato(contrato);
 
 		}
+		System.out.println();
+
+		System.out.println("Insira o mes e ano para calculo do salário (MM/YYYY): ");
+		String mesEAno = sc.next();
+		int mes = Integer.parseInt(mesEAno.substring(0, 2));
+		int ano = Integer.parseInt(mesEAno.substring(3));
+
+		System.out.println("Nome: " + trabalhador.getNome());
+		System.out.println("Departamento: " + trabalhador.getDepartamento().getNome());
+		System.out.println("Salario para: " + mesEAno + ": " + trabalhador.renda(ano, mes));
 
 		sc.close();
 
