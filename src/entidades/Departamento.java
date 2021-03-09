@@ -2,13 +2,13 @@ package entidades;
 
 public class Departamento {
 	private String nome;
-	
+
 	public Departamento() {
-		
+
 	}
 
 	public Departamento(String nome) {
-		super();
+
 		this.nome = nome;
 	}
 
@@ -19,5 +19,5 @@ public class Departamento {
 	public void setNome(String nome) {
 		this.nome = nome;
 	}
-	
+
 }
