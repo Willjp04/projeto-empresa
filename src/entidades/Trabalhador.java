@@ -74,19 +74,19 @@ public class Trabalhador {
 	public double renda(int ano, int mes) {
 		double soma = salarioBase;
 		Calendar cal = Calendar.getInstance();
-		for(ContratoPorHora c: contratos) {
+		for (ContratoPorHora c : contratos) {
 			cal.setTime(c.getData());
-			int c_ano= cal.get(Calendar.YEAR);
-			int c_mes= 1 + cal.get(Calendar.MONTH);  
-			//VALIDAÇÃO PARA BUSCAR O MÊS E ANO DO CONTRATO
+			int c_ano = cal.get(Calendar.YEAR);
+			int c_mes = 1 + cal.get(Calendar.MONTH);
+			// VALIDAÇÃO PARA BUSCAR O MÊS E ANO DO CONTRATO
 			if (ano == c_ano && mes == c_mes) {
 				soma += c.valorTotal();
 			}
-			
-		
-		
-		return soma;
-		
-	}
 
+			;
+
+		}
+		return soma;
+
+	}
 }
